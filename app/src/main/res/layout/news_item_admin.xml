@@ -10,7 +10,7 @@
     app:cardCornerRadius="16dp"
     app:cardElevation="3dp"
     app:strokeWidth="0dp"
-    app:cardBackgroundColor="@android:color/white"
+    app:cardBackgroundColor="@color/surface_color"
     android:clickable="true"
     android:focusable="true">
 
@@ -164,27 +164,6 @@
             app:layout_constraintTop_toBottomOf="@id/tvSummaryPreview"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginStart="16dp">
-
-            <!-- Quick Actions -->
-            <!--            <ImageButton-->
-            <!--                android:id="@+id/btnQuickEdit"-->
-            <!--                android:layout_width="36dp"-->
-            <!--                android:layout_height="36dp"-->
-            <!--                android:background="@drawable/circular_button_background"-->
-            <!--                android:src="@drawable/ic_edit_small"-->
-            <!--                android:tint="@color/info_color"-->
-            <!--                android:contentDescription="Quick Edit"-->
-            <!--                android:layout_marginEnd="8dp"/>-->
-
-            <!--            <ImageButton-->
-            <!--                android:id="@+id/btnShare"-->
-            <!--                android:layout_width="36dp"-->
-            <!--                android:layout_height="36dp"-->
-            <!--                android:background="@drawable/circular_button_background"-->
-            <!--                android:src="@drawable/ic_share_small"-->
-            <!--                android:tint="@color/primary_color"-->
-            <!--                android:contentDescription="Share"-->
-            <!--                android:layout_marginEnd="12dp"/>-->
 
             <!-- Primary Actions -->
             <com.google.android.material.button.MaterialButton

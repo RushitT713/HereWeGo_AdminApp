@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary Colors - Dark Mode -->
+    <color name="primary_color">#818CF8</color>
+    <color name="primary_light">#312E81</color>
+    <color name="primary_dark">#A5B4FC</color>
+
+    <!-- Background Colors - Dark Mode -->
+    <color name="background_primary">#0F172A</color>
+    <color name="background_secondary">#1E293B</color>
+
+    <!-- Text Colors - Dark Mode -->
+    <color name="text_primary">#F1F5F9</color>
+    <color name="text_secondary">#94A3B8</color>
+
+    <!-- Success Colors - Dark Mode -->
+    <color name="success_color">#34D399</color>
+    <color name="success_light">#064E3B</color>
+    <color name="success_dark">#6EE7B7</color>
+
+    <!-- Error Colors - Dark Mode -->
+    <color name="error_color">#F87171</color>
+    <color name="error_light">#7F1D1D</color>
+    <color name="error_dark">#FCA5A5</color>
+    <color name="error_background">#450A0A</color>
+
+    <!-- Warning Colors - Dark Mode -->
+    <color name="warning_color">#FBBF24</color>
+    <color name="warning_light">#78350F</color>
+    <color name="warning_dark">#FCD34D</color>
+
+    <!-- Info Colors - Dark Mode -->
+    <color name="info_color">#60A5FA</color>
+    <color name="info_light">#1E3A8A</color>
+    <color name="info_dark">#93C5FD</color>
+
+    <!-- Status Colors for Transfer Milestones - Dark Mode -->
+    <color name="rumor_color">#A78BFA</color>
+    <color name="talks_color">#22D3EE</color>
+    <color name="medical_color">#FBBF24</color>
+    <color name="contract_color">#F472B6</color>
+    <color name="official_color">#34D399</color>
+
+    <!-- Card and Surface Colors - Dark Mode -->
+    <color name="surface_color">#1E293B</color>
+    <color name="surface_variant">#334155</color>
+
+    <!-- Accent Colors - Dark Mode -->
+    <color name="accent_color">#A78BFA</color>
+
+    <!-- Gradient Colors - Dark Mode -->
+    <color name="gradient_start">#4C1D95</color>
+    <color name="gradient_end">#5B21B6</color>
+</resources>

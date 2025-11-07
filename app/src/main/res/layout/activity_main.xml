@@ -12,7 +12,7 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
+        android:background="@color/surface_color"
         app:elevation="0dp"
         android:paddingVertical="8dp">
 
@@ -40,7 +40,7 @@
                         android:id="@+id/toolbarLogo"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@mipmap/logo_demo_1_no_slogan"
+                        android:src="@drawable/app_logo"
                         android:contentDescription="App Logo"
                         android:layout_marginEnd="8dp"/>
 
@@ -51,7 +51,7 @@
                         android:layout_marginLeft="10dp"
                         android:text="Admin Panel"
                         android:textAppearance="?attr/textAppearanceHeadline6"
-                        android:textColor="?attr/colorOnSurface"
+                        android:textColor="@color/text_primary"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -64,6 +64,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:contentDescription="Logout"
+                    app:tint="@color/text_primary"
                     android:scaleType="center"/>
 
             </RelativeLayout>
@@ -92,7 +93,7 @@
                 android:layout_marginTop="16dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="@android:color/white">
+                app:cardBackgroundColor="@color/surface_color">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -233,7 +234,7 @@
                 android:layout_margin="16dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="@android:color/white">
+                app:cardBackgroundColor="@color/surface_color">
 
                 <LinearLayout
                     android:layout_width="match_parent"

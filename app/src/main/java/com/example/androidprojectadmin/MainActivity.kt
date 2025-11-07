@@ -52,6 +52,12 @@ class MainActivity : AppCompatActivity(), NewsAdminAdapter.OnItemClickListener {
         btnLogout.setOnClickListener {
             logoutUser()
         }
+        val cardSettings: CardView = findViewById(R.id.cardSettings)
+        cardSettings.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun logoutUser() {
