@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="12dp"
+    android:background="?attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/imgClubBadgePicker"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:scaleType="fitCenter"
+        tools:src="@drawable/ic_soccer"/> <!-- Use your Admin app's placeholder -->
+
+    <TextView
+        android:id="@+id/tvClubNamePicker"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/text_primary"
+    tools:text="Real Madrid"/>
+
+</LinearLayout>
+    
+

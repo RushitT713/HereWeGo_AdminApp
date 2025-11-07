@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary Colors -->
+    <color name="primary_color">#6366F1</color>
+    <color name="primary_light">#E0E7FF</color>
+    <color name="primary_dark">#4338CA</color>
+
+    <!-- Background Colors -->
+    <color name="background_primary">#F8FAFC</color>
+    <color name="background_secondary">#F1F5F9</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+
+    <!-- Success Colors -->
+    <color name="success_color">#10B981</color>
+    <color name="success_light">#ECFDF5</color>
+    <color name="success_dark">#047857</color>
+
+    <!-- Error Colors -->
+    <color name="error_color">#EF4444</color>
+    <color name="error_light">#FEE2E2</color>
+    <color name="error_dark">#DC2626</color>
+    <color name="error_background">#FEF2F2</color>
+
+    <!-- Warning Colors -->
+    <color name="warning_color">#F59E0B</color>
+    <color name="warning_light">#FEF3C7</color>
+    <color name="warning_dark">#D97706</color>
+
+    <!-- Info Colors -->
+    <color name="info_color">#3B82F6</color>
+    <color name="info_light">#DBEAFE</color>
+    <color name="info_dark">#1D4ED8</color>
+
+    <!-- Status Colors for Transfer Milestones -->
+    <color name="rumor_color">#8B5CF6</color>
+    <color name="talks_color">#06B6D4</color>
+    <color name="medical_color">#F59E0B</color>
+    <color name="contract_color">#EC4899</color>
+    <color name="official_color">#10B981</color>
+
+    <!-- Card and Surface Colors -->
+    <color name="surface_color">#FFFFFF</color>
+    <color name="surface_variant">#F1F5F9</color>
+
+    <!-- Accent Colors -->
+    <color name="accent_color">#8B5CF6</color>
+
+    <!-- Gradient Colors -->
+    <color name="gradient_start">#667EEA</color>
+    <color name="gradient_end">#764BA2</color>
+
+</resources>

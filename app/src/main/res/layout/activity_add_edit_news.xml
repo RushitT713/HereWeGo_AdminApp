@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary"
+    tools:context=".AddEditNewsActivity">
+
+    <!-- App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:elevation="2dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/white"
+            app:title="Add News Item"
+            app:titleTextColor="@color/text_primary"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:navigationIconTint="@color/text_primary"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Image Upload Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/white"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Player Image"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Image Preview Container -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="180dp"
+                        android:layout_height="240dp"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp"
+                        android:layout_marginBottom="16dp">
+
+                        <ImageView
+                            android:id="@+id/imgPreview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:background="@color/background_secondary"/>
+
+                        <!-- Overlay for upload button -->
+                        <LinearLayout
+                            android:id="@+id/uploadOverlay"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@drawable/upload_overlay"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/ic_camera"
+                                android:alpha="0.9"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tap to upload"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp"
+                                android:layout_marginTop="8dp"
+                                android:alpha="0.9"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSelectImage"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Choose Image"
+                        android:textColor="@color/primary_color"
+                        app:icon="@drawable/ic_image"
+                        app:iconTint="@color/primary_color"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Player Details Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/white"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Player Details"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="16dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPlayerName"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Player Name"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:startIconDrawable="@drawable/ic_person"
+                        app:startIconTint="@color/text_secondary"
+                        android:layout_marginBottom="16dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPlayerName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords"
+                            android:textSize="16sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <!-- Clickable Layout for "From Club" -->
+                        <LinearLayout
+                            android:id="@+id/layoutFromClub"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingVertical="12dp"
+                            android:paddingHorizontal="16dp"
+                            android:background="@drawable/club_selector_background"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_marginEnd="4dp">
+
+                            <ImageView
+                                android:id="@+id/imgFromClub"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_soccer" />
+
+                            <TextView
+                                android:id="@+id/tvFromClub"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:text="Select From Club"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="16sp"
+                                android:maxLines="1"
+                                android:ellipsize="end"/>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:src="@drawable/ic_transfer"
+                            app:tint="@color/text_secondary" />
+
+                        <!-- Clickable Layout for "To Club" -->
+                        <LinearLayout
+                            android:id="@+id/layoutToClub"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingVertical="12dp"
+                            android:paddingHorizontal="16dp"
+                            android:background="@drawable/club_selector_background"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_marginStart="4dp">
+
+                            <ImageView
+                                android:id="@+id/imgToClub"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_soccer" />
+
+                            <TextView
+                                android:id="@+id/tvToClub"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:text="Select To Club"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="16sp"
+                                android:maxLines="1"
+                                android:ellipsize="end"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Summary Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/white"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transfer Summary"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="16dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilSummary"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Describe the transfer details..."
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:startIconDrawable="@drawable/ic_description"
+                        app:startIconTint="@color/text_secondary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etSummary"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:inputType="textMultiLine|textCapSentences"
+                            android:minLines="4"
+                            android:maxLines="8"
+                            android:scrollbars="vertical" android:textSize="16sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Milestone Status Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/white"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="20dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Milestone Status"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"/>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="@color/primary_color"
+                            app:cardBackgroundColor="@color/primary_light">
+
+                            <TextView
+                                android:id="@+id/tvMilestoneLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rumor"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary_color"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="6dp"/>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <!-- Custom Milestone Slider -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- Milestone Labels -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="8dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Rumor"
+                                android:textSize="10sp"
+                                android:textColor="@color/text_secondary"
+                                android:gravity="center"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Talks"
+                                android:textSize="10sp"
+                                android:textColor="@color/text_secondary"
+                                android:gravity="center"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Medical"
+                                android:textSize="10sp"
+                                android:textColor="@color/text_secondary"
+                                android:gravity="center"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Contract"
+                                android:textSize="10sp"
+                                android:textColor="@color/text_secondary"
+                                android:gravity="center"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Official"
+                                android:textSize="10sp"
+                                android:textColor="@color/text_secondary"
+                                android:gravity="center"/>
+                        </LinearLayout>
+
+                        <com.google.android.material.slider.Slider
+                            android:id="@+id/sliderMilestone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:valueFrom="1.0"
+                            android:valueTo="5.0"
+                            android:stepSize="1.0"
+                            android:value="1.0"
+                            app:thumbColor="@color/primary_color"
+                            app:trackColorActive="@color/primary_color"
+                            app:trackColorInactive="@color/primary_light"/>
+                    </LinearLayout>
+
+                    <!-- Canceled Transfer Option -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/error_light"
+                        app:cardBackgroundColor="@color/error_background">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:padding="16dp">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_cancel"
+                                android:layout_marginEnd="12dp"
+                                app:tint="@color/error_color" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Mark transfer as canceled"
+                                android:textSize="14sp"
+                                android:textColor="@color/error_color"/>
+
+                            <com.google.android.material.checkbox.MaterialCheckBox
+                                android:id="@+id/cbCanceled"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:buttonTint="@color/error_color"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Bottom spacing for FAB -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Save Button -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:text="Save News Item"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:icon="@drawable/ic_save"
+        app:iconTint="@android:color/white"
+        app:backgroundTint="@color/success_color"
+        android:layout_gravity="bottom|end"
+        app:elevation="8dp"/>
+
+    <!-- Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:indeterminateTint="@color/primary_color"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

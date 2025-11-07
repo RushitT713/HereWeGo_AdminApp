@@ -1,0 +1,124 @@
+package com.example.androidprojectadmin
+
+object ClubDataProviderAdmin {
+    // Replace these placeholder URLs with your actual Cloudinary URLs
+    val clubs = listOf(
+        // La Liga
+        Club("Real Madrid", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658979/Real_Madrid_oy6qd3.png"),
+        Club("FC Barcelona", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658968/FC_Barcelona_rsar6c.png"),
+        Club("Atlético de Madrid", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658962/Atl%C3%A9tico_de_Madrid_wryaue.png"),
+        Club("Sevilla FC", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658980/Sevilla_FC_h2ltjx.png"),
+        Club("Real Betis Balompié", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658978/Real_Betis_Balompi%C3%A9_eptbb0.png"),
+        Club("Valencia CF", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658985/Valencia_CF_qburn0.png"),
+        Club("Real Sociedad", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658983/Real_Sociedad_sp3sws.png"),
+        Club("Villarreal CF", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658985/Villarreal_CF_mwgwj5.png"),
+        Club("Athletic Bilbao", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658961/Athletic_Bilbao_mzh9ok.png"),
+        Club("Rayo Vallecano", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658972/Rayo_Vallecano_k4jzjz.png"),
+        Club("RCD Espanyol", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658975/RCD_Espanyol_Barcelona_llekzk.png"),
+        Club("Real Mallorca", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658977/RCD_Mallorca_bagbdy.png"),
+        Club("Levante UD", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658972/Levante_UD_rpyrut.png"),
+        Club("Girona FC", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658974/Girona_FC_jjwvkw.png"),
+        Club("Getafe CF", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658970/Getafe_CF_eb35mh.png"),
+        Club("Real Oviedo", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658982/Real_Oviedo_bhzzwe.png"),
+        Club("Elche CF", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658967/Elche_CF_hjsuhl.png"),
+        Club("Deportivo Alavés", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658966/Deportivo_Alav%C3%A9s_e1nvlr.png"),
+        Club("Celta Vigo", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658964/Celta_de_Vigo_uunnun.png"),
+        Club("CA Osasuna", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658963/CA_Osasuna_yaiijt.png"),
+
+
+
+        // Premier League
+        Club("Manchester City", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658527/Manchester_City_miwfad.png"),
+        Club("Liverpool FC", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658526/Liverpool_FC_btbg7k.png"),
+        Club("Manchester United", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658528/Manchester_United_nhskvz.png"),
+        Club("Arsenal FC", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658517/Arsenal_FC_olavpx.png"),
+        Club("Chelsea FC", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658522/Chelsea_FC_vsvhq3.png"),
+        Club("Sunderland FC", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658531/Sunderland_AFC_iynznv.png"),
+        Club("West Ham United", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658532/West_Ham_United_mz6mvv.png"),
+        Club("Wolverhampton Wanderers", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658534/Wolverhampton_Wanderers_og90su.png"),
+        Club("Nottingham Forest", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658530/Nottingham_Forest_bee2am.png"),
+        Club("Newcastle United", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658529/Newcastle_United_el1tpg.png"),
+        Club("Tottenham Hotspur", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658533/Tottenham_Hotspur_cpp6ki.png"),
+        Club("Fulham FC", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658524/Fulham_FC_deskpa.png"),
+        Club("Everton FC", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658524/Everton_FC_otpzug.png"),
+        Club("Crystal Palace", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658523/Crystal_Palace_xbjvbv.png"),
+        Club("Burnley FC", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658521/Burnley_FC_poecuc.png"),
+        Club("Brighton & Hove Albion FC", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658520/Brighton_Hove_Albion_ihcizf.png"),
+        Club("AFC Bournemouth", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658516/AFC_Bournemouth_xqohwm.png"),
+        Club("Brentford FC", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658519/Brentford_FC_t2nwmo.png"),
+        Club("Aston Villa FC", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658518/Aston_Villa_zddbso.png"),
+        Club("Leeds United", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658525/Leeds_United_vyxltq.png"),
+
+        // Bundesliga
+        Club("Borussia Dortmund", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658557/Borussia_Dortmund_qi6wg2.png"),
+        Club("Bayern Munich", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658556/Bayern_Munich_l0dwwj.png"),
+        Club("RB Leipzig", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658632/RB_Leipzig_frg1or.png"),
+        Club("Bayer Leverkusen", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658555/Bayer_04_Leverkusen_yt8ay3.png"),
+        Club("Borussia Mönchengladbach", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658558/Borussia_M%C3%B6nchengladbach_uucdhd.png"),
+        Club("VfL Wolfsburg", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658723/VfL_Wolfsburg_gszabk.png"),
+        Club("SV Werder Bremen", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658636/SV_Werder_Bremen_ypm3qv.png"),
+        Club("TSG 1899 Hoffenheim", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658635/TSG_1899_Hoffenheim_kngrhq.png"),
+        Club("Hamburger SV", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658633/Hamburger_SV_yz8dgh.png"),
+        Club("Eintracht Frankfurt", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658559/Eintracht_Frankfurt_s2reks.png"),
+        Club("SC Freiburg", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658634/SC_Freiburg_zvdn9l.png"),
+        Club("1. FC Köln", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658553/1.FC_K%C3%B6ln_i01f7u.png"),
+        Club("1. FSV Mainz 05", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658554/1.FSV_Mainz_05_payl7m.png"),
+        Club("1. FC Union Berlin", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658553/1.FC_Union_Berlin_allc2g.png"),
+        Club("1. FC Heidenheim", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658552/1.FC_Heidenheim_1846_poscoo.png"),
+        Club("FC Augsburg", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658560/FC_Augsburg_dessqj.png"),
+        Club("VfB Stuttgart", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658722/VfB_Stuttgart_ivfjvz.png"),
+        Club("FC St. Pauli", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658566/FC_St._Pauli_di1ka5.png"),
+
+        // Ligue 1
+        Club("Paris Saint German", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658547/Paris_Saint-Germain_v3fnjl.png"),
+        Club("Paris FC", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658546/Paris_FC_ivf32x.png"),
+        Club("AS Monaco", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658537/AS_Monaco_fhftpn.png"),
+        Club("Olympique de Marseille", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658545/Olympique_Marseille_znr6sw.png"),
+        Club("Olympique de Lyon", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658544/Olympique_Lyon_pbegdo.png"),
+        Club("FC Nantes", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658539/FC_Nantes_u42y9d.png"),
+        Club("LOSC Lille", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658542/LOSC_Lille_jqohld.png"),
+        Club("OGC Nice", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658543/OGC_Nice_l7raqi.png"),
+        Club("RC Lens", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658548/RC_Lens_rsnlpf.png"),
+        Club("FC Metz", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658539/FC_Metz_as7ivo.png"),
+        Club("Stade Brestois 29", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658550/Stade_Brestois_29_xgunsn.png"),
+        Club("FC Lorient", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658538/FC_Lorient_c3fv5i.png"),
+        Club("Stade Rennais FC", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658551/Stade_Rennais_FC_l9118p.png"),
+
+        // Serie A
+        Club("AS Roma", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658771/AS_Roma_k9vkkh.png"),
+        Club("Fiorentina", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658768/ACF_Fiorentina_ulfy6w.png"),
+        Club("Juventus FC","https://res.cloudinary.com/dygikcty7/image/upload/v1761658781/Juventus_FC_nehvtr.png"),
+        Club("Inter Milan","https://res.cloudinary.com/dygikcty7/image/upload/v1761658779/Inter_Milan_sk3wjc.png"),
+        Club("AC Milan","https://res.cloudinary.com/dygikcty7/image/upload/v1761658768/AC_Milan_qywzaq.png"),
+        Club("SSC Napoli","https://res.cloudinary.com/dygikcty7/image/upload/v1761658782/SSC_Napoli_pklpt5.png"),
+        Club("Bologna FC 1909","https://res.cloudinary.com/dygikcty7/image/upload/v1761658773/Bologna_FC_1909_cjtylb.png"),
+        Club("SS Lazio","https://res.cloudinary.com/dygikcty7/image/upload/v1761658784/SS_Lazio_jhzmk1.png"),
+        Club("Torino FC","https://res.cloudinary.com/dygikcty7/image/upload/v1761658791/Torino_FC_eeoiqx.png"),
+        Club("US Cremonese", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658788/US_Cremonese_gv1y6x.png"),
+        Club("Parma Calcio 1913", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658787/Parma_Calcio_1913_amsygx.png"),
+        Club("Pisa Sporting Club", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658787/Pisa_Sporting_Club_fpg49q.png"),
+        Club("Atalanta BC","https://res.cloudinary.com/dygikcty7/image/upload/v1761658772/Atalanta_BC_z60yg2.png"),
+        Club("Genoa CFC","https://res.cloudinary.com/dygikcty7/image/upload/v1761658775/Genoa_CFC_dx7wfx.png"),
+        Club("Hellas Verona","https://res.cloudinary.com/dygikcty7/image/upload/v1761658777/Hellas_Verona_siasir.png"),
+        Club("Udinese Calcio","https://res.cloudinary.com/dygikcty7/image/upload/v1761658785/Udinese_Calcio_l62xpn.png"),
+        Club("Como 1907","https://res.cloudinary.com/dygikcty7/image/upload/v1761658774/Como_1907_mehz8t.png"),
+        Club("US Leece", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658791/US_Lecce_mdmifa.png"),
+        Club("US Sassuolo","https://res.cloudinary.com/dygikcty7/image/upload/v1761658792/US_Sassuolo_p6lvxe.png"),
+        Club("Cagliari Calcio","https://res.cloudinary.com/dygikcty7/image/upload/v1761658778/Cagliari_Calcio_ysnrj2.png"),
+
+
+        // Rest of the world (MLS, Saudi Teams, etc)
+        Club("Sporting Portugal", "https://res.cloudinary.com/dygikcty7/image/upload/v1758379217/sporting_cp_ogwiwr.png"),
+        Club("FC Porto", "https://res.cloudinary.com/dygikcty7/image/upload/v1758379216/fc_porto_xyoszi.png"),
+        Club("SL Benfica", "https://res.cloudinary.com/dygikcty7/image/upload/v1758379216/sl_benfica_eu4csz.png"),
+        Club("Al Nassr", "https://res.cloudinary.com/dygikcty7/image/upload/v1761662345/Al_Nassr_FC_icqvsq.png"),
+        Club("Inter Miami", "https://res.cloudinary.com/dygikcty7/image/upload/v1758379212/inter_miami_o4waot.png"),
+        Club("Fenerbahçe SK", "https://res.cloudinary.com/dygikcty7/image/upload/v1758379212/fenerbahce_fc_sdpudw.png"),
+        Club("AFC Ajax", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658794/Ajax_Amsterdam_etgijn.png"),
+        Club("LA FC", "https://res.cloudinary.com/dygikcty7/image/upload/v1761662342/Los_Angeles_FC_lwhl1t.png"),
+        Club("Al Hilal SFC", "https://res.cloudinary.com/dygikcty7/image/upload/v1761663313/Al_Hilal_SFC_d8gyzj.png"),
+        Club("Al Ittihad Club", "https://res.cloudinary.com/dygikcty7/image/upload/v1761662332/Al_Ittihad_Club_ztxvfq.png")
+
+    ).sortedBy { it.name }
+}
+

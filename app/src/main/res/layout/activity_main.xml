@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary"
+    tools:context=".MainActivity">
+
+    <!-- App Bar with Material Design 3 -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:elevation="0dp"
+        android:paddingVertical="8dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            app:contentInsetStart="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/toolbarLogo"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@mipmap/logo_demo_1_no_slogan"
+                        android:contentDescription="App Logo"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:id="@+id/toolbarTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Admin Panel"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/btnLogout"
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"
+                    android:src="@drawable/ic_logout"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Logout"
+                    android:scaleType="center"/>
+
+            </RelativeLayout>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Quick Actions Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quick Actions"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="16dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAddNews"
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="2dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="@color/primary_color"
+                            app:cardBackgroundColor="@color/primary_light">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_add"
+                                    app:tint="@color/primary_color" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Add News"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/primary_color"
+                                    android:layout_marginTop="4dp"/>
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardStats"
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="4dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="2dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="@color/info_color"
+                            app:cardBackgroundColor="@color/info_light">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_analytics"
+                                    app:tint="@color/info_color" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Analytics"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/info_color"
+                                    android:layout_marginTop="4dp"/>
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardSettings"
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="2dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="@color/warning_color"
+                            app:cardBackgroundColor="@color/warning_light">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_settings"
+                                    app:tint="@color/warning_color" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Settings"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/warning_color"
+                                    android:layout_marginTop="4dp"/>
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- News Items Section -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Section Header -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="20dp"
+                        android:paddingBottom="8dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Transfer News Items"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"/>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="2dp"
+                            app:cardBackgroundColor="@color/primary_light">
+
+                            <TextView
+                                android:id="@+id/tvTotalItems"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0 Items"
+                                android:textSize="12sp"
+                                android:textColor="@color/primary_color"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="6dp"/>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <!-- RecyclerView -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvNewsItems"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="8dp"
+                        android:paddingBottom="16dp"
+                        android:clipToPadding="false"
+                        tools:listitem="@layout/news_item_admin"/>
+
+                    <!-- Empty State -->
+                    <LinearLayout
+                        android:id="@+id/emptyState"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:padding="32dp">
+
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:src="@drawable/ic_soccer"
+                            android:alpha="0.3"
+                            app:tint="@color/text_secondary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No transfer news yet"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginTop="16dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add your first news item to get started"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_secondary"
+                            android:alpha="0.7"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

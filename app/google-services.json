@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "308375711",
+    "project_id": "herewego114-cc1dd",
+    "storage_bucket": "herewego114-cc1dd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:308375711:android:d07f13bb5ab49cb085f2aa",
+        "android_client_info": {
+          "package_name": "com.example.androidproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9Tin4znjvafpQlC6RFlJn366z9UXNMVs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:308375711:android:7b9b8668a75b111c85f2aa",
+        "android_client_info": {
+          "package_name": "com.example.androidprojectadmin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9Tin4znjvafpQlC6RFlJn366z9UXNMVs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="6dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="3dp"
+    app:strokeWidth="0dp"
+    app:cardBackgroundColor="@android:color/white"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <!-- Status Indicator -->
+        <View
+            android:id="@+id/statusIndicator"
+            android:layout_width="4dp"
+            android:layout_height="0dp"
+            android:background="@drawable/status_indicator_gradient"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="16dp"/>
+
+        <!-- Player Name -->
+        <TextView
+            android:id="@+id/tvPlayerNameAdmin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Cristiano Ronaldo"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintStart_toEndOf="@id/statusIndicator"
+            app:layout_constraintEnd_toStartOf="@id/milestoneChip"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            tools:text="Cristiano Ronaldo"/>
+
+        <!-- Milestone Status Chip -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/milestoneChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/success_color"
+            app:cardBackgroundColor="@color/success_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvMilestoneStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Official"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/success_color"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Transfer Info -->
+        <LinearLayout
+            android:id="@+id/transferInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@id/statusIndicator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPlayerNameAdmin"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:id="@+id/tvFromToAdmin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Al Nassr → Sporting FC"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:drawableStart="@drawable/ic_transfer"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/text_secondary"
+                tools:text="Al Nassr → Sporting FC"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/followtimeInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/statusIndicator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/transferInfo"
+            android:layout_marginStart="20dp">
+
+            <TextView
+                android:id="@+id/tvTimestamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 hours ago"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:alpha="0.7"/>
+
+            <TextView
+                android:id="@+id/tvFollowCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:alpha="0.7"
+                android:drawableStart="@drawable/ic_star_filled_white_24"
+                android:drawablePadding="4dp"
+                android:drawableTint="@color/warning_dark"
+                android:gravity="center_vertical"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                tools:text="123" />
+
+        </LinearLayout>
+
+        <!-- Summary Preview -->
+        <TextView
+            android:id="@+id/tvSummaryPreview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Breaking: Major transfer development as negotiations reach final stages..."
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:lineSpacingExtra="2dp"
+            app:layout_constraintStart_toEndOf="@id/statusIndicator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/followtimeInfo"
+            android:layout_marginStart="16dp"
+            tools:text="Breaking: Major transfer development as negotiations reach final stages..."/>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:id="@+id/actionButtons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@id/statusIndicator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSummaryPreview"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp">
+
+            <!-- Quick Actions -->
+            <!--            <ImageButton-->
+            <!--                android:id="@+id/btnQuickEdit"-->
+            <!--                android:layout_width="36dp"-->
+            <!--                android:layout_height="36dp"-->
+            <!--                android:background="@drawable/circular_button_background"-->
+            <!--                android:src="@drawable/ic_edit_small"-->
+            <!--                android:tint="@color/info_color"-->
+            <!--                android:contentDescription="Quick Edit"-->
+            <!--                android:layout_marginEnd="8dp"/>-->
+
+            <!--            <ImageButton-->
+            <!--                android:id="@+id/btnShare"-->
+            <!--                android:layout_width="36dp"-->
+            <!--                android:layout_height="36dp"-->
+            <!--                android:background="@drawable/circular_button_background"-->
+            <!--                android:src="@drawable/ic_share_small"-->
+            <!--                android:tint="@color/primary_color"-->
+            <!--                android:contentDescription="Share"-->
+            <!--                android:layout_marginEnd="12dp"/>-->
+
+            <!-- Primary Actions -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEdit"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Edit"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_color"
+                app:cornerRadius="18dp"
+                app:strokeColor="@color/primary_color"
+                app:strokeWidth="1dp"
+                android:layout_marginEnd="8dp"
+                android:minWidth="70dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDelete"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Delete"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/error_color"
+                app:cornerRadius="18dp"
+                app:strokeColor="@color/error_color"
+                app:strokeWidth="1dp"
+                android:minWidth="70dp"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
