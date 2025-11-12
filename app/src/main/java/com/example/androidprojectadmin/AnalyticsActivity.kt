@@ -15,17 +15,14 @@ class AnalyticsActivity : AppCompatActivity() {
     private lateinit var db: FirebaseFirestore
     private var firestoreListener: ListenerRegistration? = null
 
-    // Total Stats
     private lateinit var tvTotalItemsCount: TextView
     private lateinit var tvTotalFollows: TextView
     private lateinit var tvAvgFollows: TextView
 
-    // Most Followed
     private lateinit var tvMostFollowedPlayer: TextView
     private lateinit var tvMostFollowedTransfer: TextView
     private lateinit var tvMostFollowedCount: TextView
 
-    // Status Distribution
     private lateinit var tvRumorCount: TextView
     private lateinit var tvTalksCount: TextView
     private lateinit var tvMedicalCount: TextView
@@ -33,12 +30,10 @@ class AnalyticsActivity : AppCompatActivity() {
     private lateinit var tvOfficialCount: TextView
     private lateinit var tvCanceledCount: TextView
 
-    // Recent Activity
     private lateinit var tvItemsToday: TextView
     private lateinit var tvItemsThisWeek: TextView
     private lateinit var tvItemsThisMonth: TextView
 
-    // Popular Clubs
     private lateinit var tvTopDepartingClub: TextView
     private lateinit var tvTopDepartingCount: TextView
     private lateinit var tvTopArrivingClub: TextView
@@ -56,17 +51,14 @@ class AnalyticsActivity : AppCompatActivity() {
     }
 
     private fun bindViews() {
-        // Total Stats
         tvTotalItemsCount = findViewById(R.id.tvTotalItemsCount)
         tvTotalFollows = findViewById(R.id.tvTotalFollows)
         tvAvgFollows = findViewById(R.id.tvAvgFollows)
 
-        // Most Followed
         tvMostFollowedPlayer = findViewById(R.id.tvMostFollowedPlayer)
         tvMostFollowedTransfer = findViewById(R.id.tvMostFollowedTransfer)
         tvMostFollowedCount = findViewById(R.id.tvMostFollowedCount)
 
-        // Status Distribution
         tvRumorCount = findViewById(R.id.tvRumorCount)
         tvTalksCount = findViewById(R.id.tvTalksCount)
         tvMedicalCount = findViewById(R.id.tvMedicalCount)
@@ -74,12 +66,10 @@ class AnalyticsActivity : AppCompatActivity() {
         tvOfficialCount = findViewById(R.id.tvOfficialCount)
         tvCanceledCount = findViewById(R.id.tvCanceledCount)
 
-        // Recent Activity
         tvItemsToday = findViewById(R.id.tvItemsToday)
         tvItemsThisWeek = findViewById(R.id.tvItemsThisWeek)
         tvItemsThisMonth = findViewById(R.id.tvItemsThisMonth)
 
-        // Popular Clubs
         tvTopDepartingClub = findViewById(R.id.tvTopDepartingClub)
         tvTopDepartingCount = findViewById(R.id.tvTopDepartingCount)
         tvTopArrivingClub = findViewById(R.id.tvTopArrivingClub)
@@ -112,7 +102,6 @@ class AnalyticsActivity : AppCompatActivity() {
     }
 
     private fun calculateAnalytics(newsList: List<NewsItem>) {
-        // Total Stats
         val totalItems = newsList.size
         val totalFollows = newsList.sumOf { it.followCount }
         val avgFollows = if (totalItems > 0) totalFollows / totalItems else 0
@@ -121,7 +110,6 @@ class AnalyticsActivity : AppCompatActivity() {
         tvTotalFollows.text = formatNumber(totalFollows)
         tvAvgFollows.text = formatNumber(avgFollows)
 
-        // Most Followed
         val mostFollowedItem = newsList.maxByOrNull { it.followCount }
         if (mostFollowedItem != null && mostFollowedItem.followCount > 0) {
             tvMostFollowedPlayer.text = mostFollowedItem.playerName
@@ -133,13 +121,10 @@ class AnalyticsActivity : AppCompatActivity() {
             tvMostFollowedCount.text = ""
         }
 
-        // Status Distribution
         calculateStatusDistribution(newsList)
 
-        // Recent Activity
         calculateRecentActivity(newsList)
 
-        // Popular Clubs
         calculatePopularClubs(newsList)
     }
 
@@ -221,7 +206,6 @@ class AnalyticsActivity : AppCompatActivity() {
             }
         }
 
-        // Top Departing Club
         val topDeparting = departingClubs.maxByOrNull { it.value }
         if (topDeparting != null) {
             tvTopDepartingClub.text = topDeparting.key
@@ -231,7 +215,6 @@ class AnalyticsActivity : AppCompatActivity() {
             tvTopDepartingCount.text = ""
         }
 
-        // Top Arriving Club
         val topArriving = arrivingClubs.maxByOrNull { it.value }
         if (topArriving != null) {
             tvTopArrivingClub.text = topArriving.key

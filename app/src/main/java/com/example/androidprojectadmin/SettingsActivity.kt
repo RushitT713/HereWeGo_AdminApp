@@ -53,61 +53,50 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun loadSettings() {
-        // Load Dark Mode setting
         val isDarkMode = prefs.getBoolean("dark_mode", false)
         switchDarkMode.isChecked = isDarkMode
 
-        // Load Notifications setting
         val notificationsEnabled = prefs.getBoolean("notifications_enabled", true)
         switchNotifications.isChecked = notificationsEnabled
 
-        // Load Auto Refresh setting
         val autoRefreshEnabled = prefs.getBoolean("auto_refresh", true)
         switchAutoRefresh.isChecked = autoRefreshEnabled
     }
 
     private fun setupListeners() {
-        // Dark Mode Toggle
         switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
             prefs.edit().putBoolean("dark_mode", isChecked).apply()
             applyTheme(isChecked)
         }
 
-        // Notifications Toggle
         switchNotifications.setOnCheckedChangeListener { _, isChecked ->
             prefs.edit().putBoolean("notifications_enabled", isChecked).apply()
             val message = if (isChecked) "Notifications enabled" else "Notifications disabled"
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
         }
 
-        // Auto Refresh Toggle
         switchAutoRefresh.setOnCheckedChangeListener { _, isChecked ->
             prefs.edit().putBoolean("auto_refresh", isChecked).apply()
             val message = if (isChecked) "Auto-refresh enabled" else "Auto-refresh disabled"
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
         }
 
-        // Clear Cache
         cardClearCache.setOnClickListener {
             showClearCacheDialog()
         }
 
-        // Change Password
         cardChangePassword.setOnClickListener {
             showChangePasswordDialog()
         }
 
-        // About
         cardAbout.setOnClickListener {
             showAboutDialog()
         }
 
-        // Privacy Policy
         cardPrivacy.setOnClickListener {
             showPrivacyDialog()
         }
 
-        // Delete Account
         cardDeleteAccount.setOnClickListener {
             showDeleteAccountDialog()
         }

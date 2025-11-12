@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ListenerRegistration // <-- ADD THIS IMPORT
+import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.Query
 
 class MainActivity : AppCompatActivity(), NewsAdminAdapter.OnItemClickListener {
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(), NewsAdminAdapter.OnItemClickListener {
     private lateinit var newsRecyclerView: RecyclerView
     private lateinit var newsAdminAdapter: NewsAdminAdapter
     private var newsList = mutableListOf<NewsItem>()
-    private var firestoreListener: ListenerRegistration? = null // <-- ADD THIS
+    private var firestoreListener: ListenerRegistration? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity(), NewsAdminAdapter.OnItemClickListener {
         newsAdminAdapter = NewsAdminAdapter(newsList, this)
         newsRecyclerView.adapter = newsAdminAdapter
 
-        // --- Your existing click listeners ---
         val cardAddNews: CardView = findViewById(R.id.cardAddNews)
         cardAddNews.setOnClickListener {
             val intent = Intent(this, AddEditNewsActivity::class.java)
@@ -68,7 +67,6 @@ class MainActivity : AppCompatActivity(), NewsAdminAdapter.OnItemClickListener {
         finish()
     }
 
-    // --- MANAGE THE LISTENER WITH THE ACTIVITY LIFECYCLE ---
     override fun onStart() {
         super.onStart()
         setupFirestoreListener()
@@ -76,10 +74,8 @@ class MainActivity : AppCompatActivity(), NewsAdminAdapter.OnItemClickListener {
 
     override fun onStop() {
         super.onStop()
-        firestoreListener?.remove() // Detach the listener
+        firestoreListener?.remove()
     }
-
-    // In MainActivity.kt
 
     private fun setupFirestoreListener() {
         val query = db.collection("news_items")
@@ -93,18 +89,15 @@ class MainActivity : AppCompatActivity(), NewsAdminAdapter.OnItemClickListener {
             }
 
             if (snapshots != null) {
-                // --- THIS IS THE UPDATED LOGIC ---
                 val fetchedList = mutableListOf<NewsItem>()
                 for (document in snapshots.documents) {
                     val item = document.toObject(NewsItem::class.java)
                     if (item != null) {
-                        // Manually assign the document ID to the 'id' field
                         item.id = document.id
                         fetchedList.add(item)
                     }
                 }
                 newsList = fetchedList
-                // --- END OF UPDATED LOGIC ---
 
                 newsAdminAdapter.updateData(newsList)
 
@@ -119,7 +112,6 @@ class MainActivity : AppCompatActivity(), NewsAdminAdapter.OnItemClickListener {
         }
     }
 
-    // --- Your existing onEditClick, onDeleteClick, and deleteItemFromFirestore functions remain the same ---
     override fun onEditClick(item: NewsItem) {
         val intent = Intent(this, AddEditNewsActivity::class.java)
         intent.putExtra("news_item_id", item.id)

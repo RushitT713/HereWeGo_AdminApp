@@ -8,22 +8,18 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 
-// Define a typealias for the Club data class from ClubDataProviderAdmin
-// This assumes the structure is identical (name: String, logoUrl: String)
-// Adjust if your Club definition needs to be different in Admin vs User app
-
 class ClubPickerAdapter(
-    private var clubs: List<Club>, // Use Club directly
-    private val onClubSelected: (Club) -> Unit // Use Club directly
+    private var clubs: List<Club>,
+    private val onClubSelected: (Club) -> Unit
 ) : RecyclerView.Adapter<ClubPickerAdapter.ClubViewHolder>() {
 
-    private var filteredClubs: List<Club> = clubs // Use Club directly
+    private var filteredClubs: List<Club> = clubs
 
     inner class ClubViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val badge: ImageView = itemView.findViewById(R.id.imgClubBadgePicker)
         val name: TextView = itemView.findViewById(R.id.tvClubNamePicker)
 
-        fun bind(club: Club) { // Use Club directly
+        fun bind(club: Club) {
             name.text = club.name
             badge.load(club.logoUrl) {
                 placeholder(R.drawable.ic_soccer)

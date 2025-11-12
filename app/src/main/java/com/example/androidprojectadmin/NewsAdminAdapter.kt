@@ -30,9 +30,9 @@ class NewsAdminAdapter(
         val summary: TextView = itemView.findViewById(R.id.tvSummaryPreview)
         val timestamp: TextView = itemView.findViewById(R.id.tvTimestamp)
         val milestoneStatus: TextView = itemView.findViewById(R.id.tvMilestoneStatus)
-        val milestoneChip: MaterialCardView = itemView.findViewById(R.id.milestoneChip) // For changing colors
+        val milestoneChip: MaterialCardView = itemView.findViewById(R.id.milestoneChip)
 
-        val followCount: TextView = itemView.findViewById(R.id.tvFollowCount) // ADD THIS
+        val followCount: TextView = itemView.findViewById(R.id.tvFollowCount)
 
         init {
             btnEdit.setOnClickListener {
@@ -56,17 +56,13 @@ class NewsAdminAdapter(
         return NewsViewHolder(view)
     }
 
-    // In NewsAdminAdapter.kt
-
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         val item = newsList[position]
         val context = holder.itemView.context
 
-        // Set basic text
         holder.playerName.text = item.playerName
         holder.fromTo.text = item.fromTo
 
-        // Set summary (and hide it if it's empty)
         if (item.summary.isNotBlank()) {
             holder.summary.visibility = View.VISIBLE
             holder.summary.text = item.summary
@@ -74,10 +70,8 @@ class NewsAdminAdapter(
             holder.summary.visibility = View.GONE
         }
 
-        // Set relative timestamp
         holder.timestamp.text = getRelativeTime(item.timestamp)
 
-        // Set Milestone Status text and color
         val status = item.milestoneStatus
         val isCanceled = status < 0
         val milestoneIndex = kotlin.math.abs(status) - 1
@@ -87,19 +81,18 @@ class NewsAdminAdapter(
             holder.milestoneStatus.text = milestoneLabels[milestoneIndex]
         }
 
-        // Define colors for each status
         val statusColors = mapOf(
             1 to R.color.rumor_color,
             2 to R.color.talks_color,
-            3 to R.color.warning_color, // medical
+            3 to R.color.warning_color,
             4 to R.color.contract_color,
-            5 to R.color.success_color // official
+            5 to R.color.success_color
         )
         val statusLightColors = mapOf(
-            1 to R.color.primary_light, // A generic light color for Rumor
+            1 to R.color.primary_light,
             2 to R.color.info_light,
             3 to R.color.warning_light,
-            4 to R.color.error_light, // A generic light color for Contract
+            4 to R.color.error_light,
             5 to R.color.success_light
         )
 
@@ -124,7 +117,6 @@ class NewsAdminAdapter(
     private fun getRelativeTime(timestamp: Timestamp?): String {
         if (timestamp == null) return "No date"
         val now = System.currentTimeMillis()
-        // Convert Timestamp to milliseconds before formatting
         return DateUtils.getRelativeTimeSpanString(timestamp.toDate().time, now, DateUtils.MINUTE_IN_MILLIS).toString()
     }
 }

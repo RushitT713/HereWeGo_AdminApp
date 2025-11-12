@@ -11,19 +11,14 @@ import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-// REMOVED typealias AdminClub = Club
-
 class ClubPickerDialogFragment(
-    // Callback function uses Club directly
-    private val onClubSelected: (Club) -> Unit // Use Club
+    private val onClubSelected: (Club) -> Unit
 ) : DialogFragment() {
-
     private lateinit var clubAdapter: ClubPickerAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var searchEditText: EditText
 
-    // Lazily load all clubs (List<Club>)
-    private val allClubs: List<Club> by lazy { ClubDataProviderAdmin.clubs } // Use Club
+    private val allClubs: List<Club> by lazy { ClubDataProviderAdmin.clubs }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val inflater = LayoutInflater.from(requireContext())
@@ -43,9 +38,8 @@ class ClubPickerDialogFragment(
     }
 
     private fun setupRecyclerView() {
-        // Initialize the adapter with List<Club>
-        clubAdapter = ClubPickerAdapter(allClubs) { selectedClub -> // selectedClub is now Club
-            onClubSelected(selectedClub) // Pass the selected Club back
+        clubAdapter = ClubPickerAdapter(allClubs) { selectedClub ->
+            onClubSelected(selectedClub)
             dismiss()
         }
         recyclerView.layoutManager = LinearLayoutManager(requireContext())

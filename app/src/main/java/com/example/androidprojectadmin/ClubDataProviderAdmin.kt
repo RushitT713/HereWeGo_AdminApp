@@ -1,7 +1,6 @@
 package com.example.androidprojectadmin
 
 object ClubDataProviderAdmin {
-    // Replace these placeholder URLs with your actual Cloudinary URLs
     val clubs = listOf(
         // La Liga
         Club("Real Madrid", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658979/Real_Madrid_oy6qd3.png"),
@@ -24,8 +23,6 @@ object ClubDataProviderAdmin {
         Club("Deportivo Alavés", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658966/Deportivo_Alav%C3%A9s_e1nvlr.png"),
         Club("Celta Vigo", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658964/Celta_de_Vigo_uunnun.png"),
         Club("CA Osasuna", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658963/CA_Osasuna_yaiijt.png"),
-
-
 
         // Premier League
         Club("Manchester City", "https://res.cloudinary.com/dygikcty7/image/upload/v1761658527/Manchester_City_miwfad.png"),

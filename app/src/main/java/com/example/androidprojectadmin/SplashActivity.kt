@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
 
-    private val SPLASH_DURATION: Long = 2000 // 2 seconds is enough for a check
+    private val SPLASH_DURATION: Long = 2000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_AndroidProject_Splash)
@@ -28,20 +28,16 @@ class SplashActivity : AppCompatActivity() {
         rotate.start()
 
         Handler(Looper.getMainLooper()).postDelayed({
-            // --- LOGIC CHANGE IS HERE ---
             val firebaseAuth = FirebaseAuth.getInstance()
             val currentUser = firebaseAuth.currentUser
 
-            // Check if user is already logged in
             if (currentUser != null) {
-                // User is logged in, go to MainActivity
                 startActivity(Intent(this, MainActivity::class.java))
             } else {
-                // User is not logged in, go to LoginActivity
                 startActivity(Intent(this, LoginActivity::class.java))
             }
 
-            finish() // Close the splash activity
+            finish()
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         }, SPLASH_DURATION)
     }

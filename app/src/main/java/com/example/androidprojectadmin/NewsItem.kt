@@ -1,4 +1,3 @@
-// In NewsItem.kt
 package com.example.androidprojectadmin
 
 import com.google.firebase.Timestamp // <-- IMPORT THIS
@@ -11,11 +10,10 @@ data class NewsItem(
     val fromTo: String = "",
     val summary: String = "",
     val imageUrl: String = "",
-    val timestamp: Timestamp? = null, // <-- CHANGE THIS LINE
+    val timestamp: Timestamp? = null,
     val milestoneStatus: Int = 1,
     var isFollowed: Boolean = false,
     val followCount: Int = 0
 ) {
-    // Required empty constructor for Firestore deserialization
     constructor() : this("", "", "", "", "", null, 1, false, 0) // <-- CHANGE THIS
 }
